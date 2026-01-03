@@ -124,8 +124,12 @@ nav {
 
 .game{
   width: 25%;
+  max-height: 300px;
   padding: 15px;
   margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
 }
 
 .game__img--wrapper{

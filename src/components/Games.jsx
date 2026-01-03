@@ -1,35 +1,35 @@
+import { useEffect, useState } from "react";
 import Game from "./Game";
 
-let data 
-let html 
-getAPI()
-
-async function getAPI() {
-    const objects = await fetch('https://jsonfakery.com/games/paginated')
-    const objectsData = await objects.json()
-    data = objectsData.data
-    renderItems(data)
-    return objectsData.data
-    
-}
-function renderItems(items){
-    if (data){
-        const itemHTML = items.map((item) =>
-            (<Game game={item} />))
-        html = itemHTML
-        console.log(html)
-        
-        return itemHTML
-
-    }
-} 
-
 function Games() {
+    const [games, setGames] = useState([])
+
+    useEffect(() => {
+        const fetchGames = async () => {
+            try {
+                const res = await fetch('https://jsonfakery.com/games/simple-paginate')
+                if (!res.ok) throw new Error(res.statusText)
+                const data = await res.json()
+                setGames(data.data)
+            } catch (err) {
+                console.error(err)
+            }
+        }
+        
+        fetchGames()
+    }, [])
     
+    console.log(games)
     return(
         <div className="container">
             <div className="row">
-                {html}
+                {
+                    games ? (
+                        games.map(game => (
+                            <Game game={game} />
+                        ))
+                    ) : (null)
+                }
             </div>
         </div>
     )
