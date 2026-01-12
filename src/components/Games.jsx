@@ -7,7 +7,7 @@ function Games() {
     useEffect(() => {
         const fetchGames = async () => {
             try {
-                const res = await fetch('https://jsonfakery.com/games/simple-paginate')
+                const res = await fetch('')
                 if (!res.ok) throw new Error(res.statusText)
                 const data = await res.json()
                 setGames(data.data)
