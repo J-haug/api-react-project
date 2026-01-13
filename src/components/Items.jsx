@@ -7,10 +7,11 @@ function Items() {
     useEffect(() => {
         const fetchItems = async () => {
             try {
-                const res = await fetch('https://dummyjson.com/products/category/smartphones')
+                const res = await fetch('https://api.spaceflightnewsapi.net/v4/articles/?format=json&limit=32')
                 if (!res.ok) throw new Error(res.statusText)
                 const data = await res.json()
-                setItems(data.products)
+                console.log(data)
+                setItems(data.results)
             } catch (err) {
                 console.error(err)
             }
@@ -26,7 +27,7 @@ function Items() {
                 {
                     items ? (
                         items.map(item => (
-                            <Item item={item} />
+                            <Item item={item} key={item.id}/>
                         ))
                     ) : (null)
                 }

@@ -10,7 +10,7 @@ function SearchNav() {
           <img src={image} alt="" className="nav__background--img" />
         </figure>
         <div className="nav__row">
-          <h1 className="search__title">Browse our +10,000 games</h1>
+          <h1 className="search__title">Browse articles</h1>
           <div className="nav__search-bar">
             <FontAwesomeIcon className="search__icon" icon={faMagnifyingGlass} />
             <input type="text" placeholder="Search" className="search__input" />
