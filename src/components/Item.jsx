@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-function Item({item}) {
+function Item({ item, key }) {
  
   return (
     <div className="item">
-      <figure className="item__img--wrapper">
-        <img src={item.image_url} alt="" className="item__img" />
-      </figure>
-      <h2 className="item__title">{item.title}</h2>
-      
+      <Link to="/article/:{key}" className="nav__link">
+        <figure className="item__img--wrapper">
+          <img src={item.image_url} alt="" className="item__img" />
+        </figure>
+        <h2 className="item__title">{item.title}</h2>
+      </Link>
     </div>
   );
 }
