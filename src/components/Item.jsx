@@ -5,7 +5,7 @@ function Item({ item, key }) {
  
   return (
     <div className="item">
-      <Link to="/article/:{key}" className="nav__link">
+      <Link to={`/article/${item.id}`} className="item__link">
         <figure className="item__img--wrapper">
           <img src={item.image_url} alt="" className="item__img" />
         </figure>

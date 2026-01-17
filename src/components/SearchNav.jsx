@@ -5,7 +5,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 function SearchNav() {
   return (
     <nav>
-      <div className="nav__container">
+      <div className="search__nav--container">
         <figure className="nav__background--img--wrapper">
           <img src={image} alt="" className="nav__background--img" />
         </figure>

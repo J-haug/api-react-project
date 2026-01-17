@@ -42,13 +42,14 @@ nav {
   align-items: center;
 }
 
-.nav__container {
+.search__nav--container {
   width: 100vw;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .nav__row {
@@ -120,7 +121,28 @@ nav {
   font-weight: 200;
   padding: 0 6px;
 }
+.nav__container{
+  display: flex;
+  width: 100%;
+  flex-direction: row ;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px white solid;
+}
+.nav__links{
+  display: flex;
+}
+.nav__link{
+  font-size: 24px;
+  font-weight: 500;
+  margin: 12px;
+  text-decoration: none;
+}
 
+.nav__logo{
+  width: 300px;
+  font-size: 40px;
+}
 /* items */
 
 .item{
@@ -159,4 +181,9 @@ nav {
 
 .item__title{
   font-size: 20px;
+  text-decoration: none;
+}
+
+.item__link{
+  text-decoration: none;
 }

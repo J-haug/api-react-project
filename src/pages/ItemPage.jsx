@@ -4,12 +4,14 @@ import Nav from '../components/Nav';
 import Item from '../components/Item';
 
 function ItemPage({ items }) {
-    
+    const { id } = useParams();
+    const item = items.find((item) => +item.id === +id);
     
   return (
     <>
         <Nav />
-        <Item item={items} key={items.id}/>
+        
+        <Item item={item} key={item.id}/>
     </>
   )
 }
