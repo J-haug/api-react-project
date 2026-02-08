@@ -4,7 +4,7 @@ import Item from "./Item";
 function Items() {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  
+
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -15,7 +15,6 @@ function Items() {
         );
         if (!res.ok) throw new Error(res.statusText);
         const data = await res.json();
-        console.log(data);
         setItems(data.results);
       } catch (err) {
         console.error(err);
@@ -27,7 +26,6 @@ function Items() {
     fetchItems();
   }, []);
 
-  console.log(items);
 
   return (
     <div className="container">

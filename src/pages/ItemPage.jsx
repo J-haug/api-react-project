@@ -3,12 +3,13 @@ import { Link, useParams } from "react-router-dom";
 import Nav from "../components/Nav";
 import Item from "../components/Item";
 
-function ItemPage({ id }) {
-  
+function ItemPage() {
+  const { id } = useParams();
+
   const [item, setItem] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-    
-  
+  console.log(item)
+ 
     useEffect(() => {
       const fetchItems = async () => {
         setIsLoading(true);
@@ -19,18 +20,19 @@ function ItemPage({ id }) {
           if (!res.ok) throw new Error(res.statusText);
           const data = await res.json();
           
-          setItem(data.results);
+          setItem(data);
         } catch (err) {
           console.error(err);
         } finally {
           setIsLoading(false);
         }
       };
-  
+      
+      
       fetchItems();
+     
     }, []);
   
-
   return (
     <>
       <Nav />
