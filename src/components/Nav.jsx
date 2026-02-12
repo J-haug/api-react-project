@@ -6,8 +6,7 @@ function Nav() {
         <div className="nav__container">
             <h1 className="nav__logo">Space News</h1>
             <div className="nav__links">
-                <Link to='/' className='nav__link'>Home</Link>
-                <Link to='/search' className='nav__link'>Browse</Link>
+                <Link to='/' className='nav__link'>Browse</Link>
 
             </div>
 

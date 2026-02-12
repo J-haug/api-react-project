@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function Item({ item, key }) {
+function Item({ item,}) {
  
   return (
     <div className="item">

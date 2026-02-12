@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Nav from "../components/Nav";
 import Item from "../components/Item";
+import Footer from "../components/Footer";
 
 function ItemPage() {
   const { id } = useParams();
@@ -54,7 +55,7 @@ function ItemPage() {
                <div className="item__description--wrapper">
                  <h1 className="item__page--title">{item.title}</h1>
                  <p className="item__page--description">{item.summary}</p>
-                 <a href={item.url} className="item__page--link">
+                 <a href={item.url} target="blank" className="item__page--link">
                    Link to article
                  </a>
                </div>
@@ -63,6 +64,7 @@ function ItemPage() {
          </div>
           )
         }
+        <Footer />
     </>
   );
 }
