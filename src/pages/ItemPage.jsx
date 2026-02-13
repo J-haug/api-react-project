@@ -31,7 +31,7 @@ function ItemPage() {
       
       fetchItems();
      
-    }, []);
+    }, [id]);
   
   return (
     <>
